@@ -1,0 +1,200 @@
+[gd_scene load_steps=3 format=3 uid="uid://buy2ke4lxs6ug"]
+
+[ext_resource type="Script" uid="uid://dnnisaja6thri" path="res://camera_3d.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://om1qcqri3mqh" path="res://new.gd" id="1_fj7yv"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_fj7yv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.4440863)
+script = ExtResource("1_f3sb7")
+distance = 25.0
+max_distance = 200.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.99999976)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 178.0
+offset_right = 107.0
+offset_bottom = 209.0
+text = "Start/Stop"
+
+[node name="next" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 219.0
+offset_right = 107.0
+offset_bottom = 250.0
+text = "next"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 88.0
+offset_bottom = 34.0
+text = "Field size:"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 51.0
+offset_right = 88.0
+offset_bottom = 74.0
+text = "Spawn chance:"
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 131.0
+offset_bottom = 119.0
+text = "survive with"
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 96.0
+offset_right = 350.0
+offset_bottom = 119.0
+text = "-"
+
+[node name="Label8" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 96.0
+offset_right = 474.0
+offset_bottom = 119.0
+text = "neighbors"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 51.0
+offset_right = 336.0
+offset_bottom = 74.0
+text = "%"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 11.0
+offset_right = 263.0
+offset_bottom = 34.0
+text = "x"
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 11.0
+offset_right = 376.0
+offset_bottom = 34.0
+text = "x"
+
+[node name="SpinBoxX" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 7.0
+offset_right = 176.5625
+offset_bottom = 38.0
+min_value = -1.0
+max_value = 1000.0
+value = 20.0
+
+[node name="SpinBoxY" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 7.0
+offset_right = 293.5625
+offset_bottom = 38.0
+max_value = 1000.0
+value = 20.0
+
+[node name="SpinBoxZ" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 7.0
+offset_right = 409.5625
+offset_bottom = 38.0
+max_value = 1000.0
+value = 20.0
+
+[node name="SpinBoxChance" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 47.0
+offset_right = 217.5625
+offset_bottom = 78.0
+min_value = -1.0
+value = 5.0
+
+[node name="survive_with_min" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 93.0
+offset_right = 208.5625
+offset_bottom = 124.0
+value = 5.0
+
+[node name="survive_with_max" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 93.0
+offset_right = 329.5625
+offset_bottom = 124.0
+value = 8.0
+
+[node name="Label9" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 140.0
+offset_right = 131.0
+offset_bottom = 163.0
+text = "born with"
+
+[node name="Label10" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 140.0
+offset_right = 350.0
+offset_bottom = 163.0
+text = "-"
+
+[node name="Label11" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 140.0
+offset_right = 474.0
+offset_bottom = 163.0
+text = "neighbors"
+
+[node name="born_with_min" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 137.0
+offset_right = 208.5625
+offset_bottom = 168.0
+value = 6.0
+
+[node name="born_with_max" type="SpinBox" parent="Control"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 137.0
+offset_right = 329.5625
+offset_bottom = 168.0
+value = 6.0
+
+[node name="Grid" type="Node3D" parent="."]
+
+[connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/next" to="." method="_on_next_pressed"]
