@@ -27,7 +27,7 @@ offset_left = 20.0
 offset_top = 178.0
 offset_right = 107.0
 offset_bottom = 209.0
-text = "Start/Stop"
+text = "Restart"
 
 [node name="next" type="Button" parent="Control"]
 layout_mode = 0
@@ -36,6 +36,15 @@ offset_top = 219.0
 offset_right = 107.0
 offset_bottom = 250.0
 text = "next"
+
+[node name="next2" type="Button" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = 261.0
+offset_right = 110.0
+offset_bottom = 292.0
+text = "autoNext"
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -198,3 +207,4 @@ value = 6.0
 
 [connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/next2" to="." method="_on_next_2_pressed"]

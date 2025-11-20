@@ -23,12 +23,20 @@ var rng = RandomNumberGenerator.new()
 #UPDATE: browser supports no multithreading with godot... :C 
 var worker_thread: Thread
 var is_processing := false
+var is_auto_processing :=false
+var timer := Timer.new()
 
 func _ready() -> void:
 	$Camera3D.target = Vector3(sizeX/2, sizeY/2, sizeZ/2)
 	$Camera3D._update_camera_position()
 	rng.randomize()
 	grid = PackedInt32Array()
+	
+	timer.wait_time = 1.0 
+	timer.one_shot = false 
+	add_child(timer)
+	timer.timeout.connect(calcTimerTimeout)
+	
 	
 
 func _on_start_pressed() -> void:
@@ -186,3 +194,20 @@ func _on_next_pressed() -> void:
 	
 
 	pass # Replace with function body.
+
+
+func _on_next_2_pressed() -> void:
+	
+	if is_auto_processing:
+		is_processing = false
+		timer.stop()
+	else: 
+		is_auto_processing = true
+		timer.start()
+
+
+func calcTimerTimeout():
+	print("timer called this function" + str(is_auto_processing))
+	if is_auto_processing:
+		_compute_next_generation_threaded(grid)
+		
